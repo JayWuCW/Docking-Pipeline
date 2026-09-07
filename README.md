@@ -115,5 +115,5 @@ Input structures (PDB) and generated outputs (PDBQTs, logs, poses) are not track
 ## Contributors
 
 - **Chun Yin (Jay) Wu** — bioinformatics lead: receptor/ligand preparation, docking-box calculation, Vina batch pipeline.
-- **Tom Dahl** — AlphaFold model generation.
+- **Tom Dahl** — AlphaFold model generation and R analysis
 - **AI (Claude) was used as a coding assistant — for debugging support, conceptual explanation, and drafting documentation. All pipeline code was written and is understood by the author.**
