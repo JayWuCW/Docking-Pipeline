@@ -1,3 +1,22 @@
+logs <- list.files("output/logs", pattern = "_log\\.txt$", full.names = TRUE)
+
+read_score <- function(f) {
+  txt <- readLines(f, warn = FALSE)
+  rows <- str_match(str_trim(txt), "^(\\d+)\\s+(-?[0-9.]+)\\s+(-?[0-9.]+)\\s+(-?[0-9.]+)$")
+  aff  <- as.numeric(rows[!is.na(rows[, 1]), 3])
+  tibble(
+    ligand  = str_remove(basename(f), "_log\\.txt$"),
+    best    = min(aff),
+    n_poses = length(aff)
+  )
+}
+
+results <- map_dfr(logs, read_score) |>
+  arrange(best) |>
+  mutate(rank = row_number())
+
+write_xlsx(results, "docking_results.csv")
+
 df <- read_csv("docking_results.csv")
 
 df |>
