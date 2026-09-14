@@ -1,3 +1,10 @@
+Due to Vina outputting separate logs for each ligand, the first step involved grouping the fifty
+individual outputs into a single dataframe. Once done, I could arrange the ligands by their affinity
+for the docking site, allowing for comparison between both groups and individuals within groups. I
+then summarised groups by their best scores and mean scores, before plotting the results in two
+different histograms. 
+
+
 logs <- list.files("output/logs", pattern = "_log\\.txt$", full.names = TRUE)
 
 read_score <- function(f) {
