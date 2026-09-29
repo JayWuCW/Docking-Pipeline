@@ -84,10 +84,6 @@ Results are written to:
 - `output/logs/` — Vina's full log per ligand (contains the binding-affinity table).
 - `output/pdbqts/` — the docked pose for each ligand.
 
-## Results
-
-<!-- TODO: Jay to write up results — binding affinities per ligand, and how the known inhibitors performed as positive controls. -->
-
 ## Adapting to a new target
 
 The receptor prep, ligand prep, and docking steps are target-agnostic. To dock against a different protein, supply target knowledge in two places:
